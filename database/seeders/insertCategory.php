@@ -16,8 +16,7 @@ class insertCategory extends Seeder
             ['name'=>'Xiaomi', 'thuTu'=>'4'],
             ['name'=>'Oppo', 'thuTu'=>'5'],
             ['name'=>'Vivo', 'thuTu'=>'6'],
-            ['name'=>'Sony', 'thuTu'=>'7'],
-            ['name'=>'Motorola', 'thuTu'=>'8']
+            ['name'=>'Motorola', 'thuTu'=>'7']
         ]);
     }
 }
