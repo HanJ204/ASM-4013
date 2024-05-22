@@ -1,5 +1,5 @@
         <ul>
-          <li><a class="nav-link scrollto active" href="#">Trang chủ</a></li>
+          <li><a class="nav-link scrollto active" href="{{ url('/') }}">Trang chủ</a></li>
           <li><a class="nav-link scrollto" href="#about">Sản phẩm</a></li>
           <li class="dropdown"><a href="#"><span>Danh mục</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
@@ -19,6 +19,6 @@
             </ul>
           </li>
           <li><a class="nav-link scrollto" href="#contact">Liên hệ</a></li>
-          <li><a class="getstarted scrollto" href="#about">Đăng nhập</a></li>
+          <li><a class="getstarted scrollto" href="{{ url('/login') }}">Đăng nhập</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>

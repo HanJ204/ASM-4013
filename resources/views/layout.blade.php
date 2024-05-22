@@ -47,7 +47,7 @@
   <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo me-auto"><a href="index.html">J Mobile</a></h1>
+      <h1 class="logo me-auto"><a href="{{ url('/') }}">J Mobile</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -97,7 +97,7 @@
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Liên kết hữu ích</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Trang chủ</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/') }}">Trang chủ</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Về chúng tôi</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Dịch vụ</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Điều khoản dịch vụ</a></li>
