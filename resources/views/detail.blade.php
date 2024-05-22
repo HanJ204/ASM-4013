@@ -49,7 +49,7 @@
 
             <div class="col-lg-7 about-product">
                 <div class="portfolio-info">
-                <h3>Iphone 15 pro</h3>
+                <h3>{{$detail->name}}</h3>
                 <div class="d-flex">
                     <div class="rating me-5">
                         <i class="fa-solid fa-star"></i>
@@ -62,11 +62,11 @@
                 </div>
                 <div class="item-price">
                     <div class="current-price">
-                        <span class="price">35.000.000</span>
+                        <span class="price">{{ number_format($detail->priceSale, 0, ',', '.') }} VNĐ</span>
                         <span class="currency">đ</span>
                     </div>
                     <div class="previous-price">
-                        <span class="price">39.000.000</span>
+                        <span class="price">{{ number_format($detail->price, 0, ',', '.') }} VNĐ</span>
                         <span class="currency">đ</span>
                     </div>
                 </div>

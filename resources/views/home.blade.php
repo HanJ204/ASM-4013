@@ -78,12 +78,12 @@
           </ul> -->
 
           <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-
+          @foreach ($sphot as $sphot)
             <div class="col-12 col-md-4 col-lg-3 mb-5 portfolio-item">
-              <a class="product-item" href="{{ url('/detail') }}">
-                <img src="assets/img/ip15pro-removebg.png" class="img-fluid product-thumbnail">
-                <h3 class="product-title">Iphone 15 pro</h3>
-                <strong class="product-price">35.000.000đ</strong>
+              <a class="product-item" href="{{ url('/detail', [$sphot->id]) }}">
+                <img src="/assets/img/{{$sphot->image}}" class="img-fluid product-thumbnail">
+                <h3 class="product-title">{{$sphot->name}}</h3>
+                <strong class="product-price">{{ number_format($sphot->price, 0, ',', '.') }} VNĐ</strong>
 
                 <span class="icon-cross">
                   <!-- <img src="images/cross.svg" class="img-fluid"> -->
@@ -91,42 +91,7 @@
                 </span>
               </a>
             </div>
-            <div class="col-12 col-md-4 col-lg-3 mb-5 portfolio-item">
-              <a class="product-item" href="#">
-                <img src="assets/img/ip15pro-removebg.png" class="img-fluid product-thumbnail">
-                <h3 class="product-title">Iphone 15 pro</h3>
-                <strong class="product-price">35.000.000đ</strong>
-
-                <span class="icon-cross">
-                  <!-- <img src="images/cross.svg" class="img-fluid"> -->
-                  <i class="fa-solid fa-cart-plus"></i>
-                </span>
-              </a>
-            </div>
-            <div class="col-12 col-md-4 col-lg-3 mb-5 portfolio-item">
-              <a class="product-item" href="#">
-                <img src="assets/img/ip15pro-removebg.png" class="img-fluid product-thumbnail">
-                <h3 class="product-title">Iphone 15 pro</h3>
-                <strong class="product-price">35.000.000đ</strong>
-
-                <span class="icon-cross">
-                  <!-- <img src="images/cross.svg" class="img-fluid"> -->
-                  <i class="fa-solid fa-cart-plus"></i>
-                </span>
-              </a>
-            </div>
-            <div class="col-12 col-md-4 col-lg-3 mb-5 portfolio-item">
-              <a class="product-item" href="#">
-                <img src="assets/img/ip15pro-removebg.png" class="img-fluid product-thumbnail">
-                <h3 class="product-title">Iphone 15 pro</h3>
-                <strong class="product-price">35.000.000đ</strong>
-
-                <span class="icon-cross">
-                  <!-- <img src="images/cross.svg" class="img-fluid"> -->
-                  <i class="fa-solid fa-cart-plus"></i>
-                </span>
-              </a>
-            </div>
+          @endforeach
 
           </div>
 
@@ -149,12 +114,12 @@
           </ul> -->
 
           <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-
+          @foreach ($spmoi as $spmoi)
             <div class="col-12 col-md-4 col-lg-3 mb-5 portfolio-item">
-              <a class="product-item" href="#">
-                <img src="assets/img/ip15pro-removebg.png" class="img-fluid product-thumbnail">
-                <h3 class="product-title">Iphone 15 pro</h3>
-                <strong class="product-price">35.000.000đ</strong>
+              <a class="product-item" href="{{ url('/detail', [$spmoi->id]) }}">
+                <img src="/assets/img/{{$spmoi->image}}" class="img-fluid product-thumbnail">
+                <h3 class="product-title">{{$spmoi->name}}</h3>
+                <strong class="product-price">{{ number_format($spmoi->price, 0, ',', '.') }} VNĐ</strong>
 
                 <span class="icon-cross">
                   <!-- <img src="images/cross.svg" class="img-fluid"> -->
@@ -162,6 +127,7 @@
                 </span>
               </a>
             </div>
+          @endforeach
 
           </div>
 
@@ -185,54 +151,20 @@
 
           <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
 
-            <div class="col-12 col-md-4 col-lg-3 mb-5 portfolio-item">
-              <a class="product-item" href="#">
-                <img src="assets/img/ip15pro-removebg.png" class="img-fluid product-thumbnail">
-                <h3 class="product-title">Iphone 15 pro</h3>
-                <strong class="product-price">35.000.000đ</strong>
+            @foreach ($spxemnhieu as $spxemnhieu)
+              <div class="col-12 col-md-4 col-lg-3 mb-5 portfolio-item">
+                <a class="product-item" href="{{ url('/detail', [$spxemnhieu->id]) }}">
+                  <img src="/assets/img/{{$spxemnhieu->image}}" class="img-fluid product-thumbnail">
+                  <h3 class="product-title">{{$spxemnhieu->name}}</h3>
+                  <strong class="product-price">{{ number_format($spxemnhieu->price, 0, ',', '.') }} VNĐ</strong>
 
-                <span class="icon-cross">
-                  <!-- <img src="images/cross.svg" class="img-fluid"> -->
-                  <i class="fa-solid fa-cart-plus"></i>
-                </span>
-              </a>
-            </div>
-            <div class="col-12 col-md-4 col-lg-3 mb-5 portfolio-item">
-              <a class="product-item" href="#">
-                <img src="assets/img/ip15pro-removebg.png" class="img-fluid product-thumbnail">
-                <h3 class="product-title">Iphone 15 pro</h3>
-                <strong class="product-price">35.000.000đ</strong>
-
-                <span class="icon-cross">
-                  <!-- <img src="images/cross.svg" class="img-fluid"> -->
-                  <i class="fa-solid fa-cart-plus"></i>
-                </span>
-              </a>
-            </div>
-            <div class="col-12 col-md-4 col-lg-3 mb-5 portfolio-item">
-              <a class="product-item" href="#">
-                <img src="assets/img/ip15pro-removebg.png" class="img-fluid product-thumbnail">
-                <h3 class="product-title">Iphone 15 pro</h3>
-                <strong class="product-price">35.000.000đ</strong>
-
-                <span class="icon-cross">
-                  <!-- <img src="images/cross.svg" class="img-fluid"> -->
-                  <i class="fa-solid fa-cart-plus"></i>
-                </span>
-              </a>
-            </div>
-            <div class="col-12 col-md-4 col-lg-3 mb-5 portfolio-item">
-              <a class="product-item" href="#">
-                <img src="assets/img/ip15pro-removebg.png" class="img-fluid product-thumbnail">
-                <h3 class="product-title">Iphone 15 pro</h3>
-                <strong class="product-price">35.000.000đ</strong>
-
-                <span class="icon-cross">
-                  <!-- <img src="images/cross.svg" class="img-fluid"> -->
-                  <i class="fa-solid fa-cart-plus"></i>
-                </span>
-              </a>
-            </div>
+                  <span class="icon-cross">
+                    <!-- <img src="images/cross.svg" class="img-fluid"> -->
+                    <i class="fa-solid fa-cart-plus"></i>
+                  </span>
+                </a>
+              </div>
+            @endforeach
 
           </div>
 

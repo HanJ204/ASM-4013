@@ -30,7 +30,8 @@ class insertProducts extends Seeder
             DB::table('Products')->upsert([[
                 'name' => 'Apple'.' '.mt_rand(11, 15).' '.Arr::random($AN),
                 'image' => 'apple'.mt_rand(1, 5).'.png',
-                'price' => mt_rand(25000000, 40000000),
+                'priceSale' => mt_rand(20000000, 30000000),
+                'price' => mt_rand(30000000, 40000000),
                 'quantity' => mt_rand(10000, 20000),
                 'view' => mt_rand(5000, 20000),
                 'dateSubmitted' => now(),
@@ -38,7 +39,8 @@ class insertProducts extends Seeder
             ],[
                 'name' => 'Samsung Galaxy'.' '.Arr::random($SN),
                 'image' => 'samsung'.mt_rand(1, 5).'.png',
-                'price' => mt_rand(25000000, 40000000),
+                'priceSale' => mt_rand(20000000, 30000000),
+                'price' => mt_rand(30000000, 40000000),
                 'quantity' => mt_rand(10000, 20000),
                 'view' => mt_rand(5000, 20000),
                 'dateSubmitted' => now(),
@@ -46,7 +48,8 @@ class insertProducts extends Seeder
             ],[
                 'name' => 'Huawei'.' '.$HN,
                 'image' => 'huawei'.mt_rand(1, 5).'.png',
-                'price' => mt_rand(25000000, 40000000),
+                'priceSale' => mt_rand(20000000, 30000000),
+                'price' => mt_rand(30000000, 40000000),
                 'quantity' => mt_rand(10000, 20000),
                 'view' => mt_rand(5000, 20000),
                 'dateSubmitted' => now(),
@@ -54,7 +57,8 @@ class insertProducts extends Seeder
             ],[
                 'name' => 'Xiaomi'.' '.$XN,
                 'image' => 'xiaomi'.mt_rand(1, 5).'.png',
-                'price' => mt_rand(25000000, 40000000),
+                'priceSale' => mt_rand(20000000, 30000000),
+                'price' => mt_rand(30000000, 40000000),
                 'quantity' => mt_rand(10000, 20000),
                 'view' => mt_rand(5000, 20000),
                 'dateSubmitted' => now(),
@@ -62,7 +66,8 @@ class insertProducts extends Seeder
             ],[
                 'name' => 'Oppo'.' '.$ON,
                 'image' => 'oppo'.mt_rand(1, 5).'.png',
-                'price' => mt_rand(25000000, 40000000),
+                'priceSale' => mt_rand(20000000, 30000000),
+                'price' => mt_rand(30000000, 40000000),
                 'quantity' => mt_rand(10000, 20000),
                 'view' => mt_rand(5000, 20000),
                 'dateSubmitted' => now(),
@@ -70,7 +75,8 @@ class insertProducts extends Seeder
             ],[
                 'name' => 'Vivo Y'.mt_rand(83, 95).' '.Arr::random($ON2),
                 'image' => 'vivo'.mt_rand(1, 5).'.png',
-                'price' => mt_rand(25000000, 40000000),
+                'priceSale' => mt_rand(20000000, 30000000),
+                'price' => mt_rand(30000000, 40000000),
                 'quantity' => mt_rand(10000, 20000),
                 'view' => mt_rand(5000, 20000),
                 'dateSubmitted' => now(),
@@ -78,7 +84,8 @@ class insertProducts extends Seeder
             ],[
                 'name' => 'Motorola Moto'.' '.Arr::random($MN),
                 'image' => 'motorola'.mt_rand(1, 5).'.png',
-                'price' => mt_rand(25000000, 40000000),
+                'priceSale' => mt_rand(20000000, 30000000),
+                'price' => mt_rand(30000000, 40000000),
                 'quantity' => mt_rand(10000, 20000),
                 'view' => mt_rand(5000, 20000),
                 'dateSubmitted' => now(),

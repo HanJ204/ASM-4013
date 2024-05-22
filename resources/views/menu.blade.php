@@ -1,21 +1,15 @@
+<?php
+    $category = DB::table('category')
+    ->get();
+?>
         <ul>
           <li><a class="nav-link scrollto active" href="{{ url('/') }}">Trang chủ</a></li>
-          <li><a class="nav-link scrollto" href="#about">Sản phẩm</a></li>
+          <!-- <li><a class="nav-link scrollto" href="#about">Sản phẩm</a></li> -->
           <li class="dropdown"><a href="#"><span>Danh mục</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
+              @foreach ($category as $category)
+              <li><a href="{{ url('/category', [$category->id]) }}">{{$category->name}}</a></li>
+              @endforeach
             </ul>
           </li>
           <li><a class="nav-link scrollto" href="#contact">Liên hệ</a></li>
