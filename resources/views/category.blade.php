@@ -16,7 +16,7 @@
             <li><a href="{{ url('/') }}">Home</a></li>
             <li>{{$category->name}}</li>
             </ol>
-            <!-- <h2>{{$category->name}}</h2> -->
+            <h2>{{$category->name}}</h2>
 
         </div>
         </section><!-- End Breadcrumbs -->
@@ -38,12 +38,12 @@
 
           <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
 
-            @foreach ($list_product as $list_product)
+            @foreach ($list_product as $product)
               <div class="col-12 col-md-4 col-lg-3 mb-5 portfolio-item">
-                <a class="product-item" href="{{ url('/detail', [$list_product->id]) }}">
-                  <img src="/assets/img/{{$list_product->image}}" class="img-fluid product-thumbnail">
-                  <h3 class="product-title">{{$list_product->name}}</h3>
-                  <strong class="product-price">{{ number_format($list_product->price, 0, ',', '.') }} VNĐ</strong>
+                <a class="product-item" href="{{ url('/detail', [$product->id]) }}">
+                  <img src="/assets/img/{{$product->image}}" class="img-fluid product-thumbnail">
+                  <h3 class="product-title">{{$product->name}}</h3>
+                  <strong class="product-price">{{ number_format($product->price, 0, ',', '.') }} VNĐ</strong>
 
                   <span class="icon-cross">
                     <!-- <img src="images/cross.svg" class="img-fluid"> -->
@@ -53,6 +53,10 @@
               </div>
             @endforeach
 
+          </div>
+
+          <div class="d-flex justify-content-center">
+              {{ $list_product->links() }}
           </div>
 
         </div>

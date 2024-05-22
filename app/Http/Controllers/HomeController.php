@@ -41,9 +41,7 @@ class HomeController extends Controller
         $list_product = DB::table('products')
         ->where('idCategory', '=', $id)
         ->orderBy('dateSubmitted', 'desc')
-        ->limit(8)
-        ->get();
-        // ->paginate(6)->withQueryString();
+        ->paginate(8)->withQueryString();
 
         return view('category', ['list_product'=>$list_product, 'category' => $category]);
     }

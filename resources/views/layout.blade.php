@@ -65,19 +65,18 @@
   <!-- ======= Footer ======= -->
   <footer id="footer">
 
-    <div class="footer-newsletter">
+    <!-- <div class="footer-newsletter">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-6">
             <h4>Tìm kiếm sản phẩm</h4>
-            <!-- <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p> -->
             <form action="" method="post">
               <input type="email" name="email"><input type="submit" value="Tìm kiếm">
             </form>
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <div class="footer-top">
       <div class="container">
