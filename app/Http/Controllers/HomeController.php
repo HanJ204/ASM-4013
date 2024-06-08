@@ -4,28 +4,26 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
+use App\Models\Category;
+use App\Models\Product;
 Paginator::useBootstrap();
-use DB;
 
 class HomeController extends Controller
 {
     function index(){
-        $sphot = DB::table('products')
-        ->where('hot', '=', '1')
+        $sphot = product::where('hot', '=', '1')
         ->limit(4)
         ->get();
 
-        $spmoi = DB::table('products')
-        ->orderBy('id', 'asc')
+        $spmoi = product::orderBy('id', 'asc')
         ->limit(8)
         ->get();
 
-        $spxemnhieu = DB::table('products')
-        ->orderBy('view', 'desc')
+        $spxemnhieu = product::orderBy('view', 'desc')
         ->limit(4)
         ->get();
 
-        return view('home', [
+        return view('client.home', [
             'sphot'=>$sphot,
             'spmoi'=>$spmoi,
             'spxemnhieu'=>$spxemnhieu,
@@ -34,22 +32,19 @@ class HomeController extends Controller
 
     function category($id) {
 
-        $category = DB::table('category')
-        ->where('id', $id)
+        $category = category::where('id', $id)
         ->first();
         
-        $list_product = DB::table('products')
-        ->where('idCategory', '=', $id)
+        $list_product = product::where('idCategory', '=', $id)
         ->orderBy('dateSubmitted', 'desc')
         ->paginate(8)->withQueryString();
 
-        return view('category', ['list_product'=>$list_product, 'category' => $category]);
+        return view('client.category', ['list_product'=>$list_product, 'category' => $category]);
     }
 
     function detail($id) {
-        $detail = DB::table('products')
-        ->where('id', $id)
+        $detail = product::where('id', $id)
         ->first();
-        return view('detail', ['detail'=>$detail]);
+        return view('client.detail', ['detail'=>$detail]);
     }
 }

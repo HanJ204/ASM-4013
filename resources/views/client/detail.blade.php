@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('client.layout')
 
 @section('tieudetrang')
     {{$detail->name}}

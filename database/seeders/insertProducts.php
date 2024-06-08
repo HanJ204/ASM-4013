@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use DB;
+use App\Models\Product;
 use Str;
 use Arr;
 class insertProducts extends Seeder
@@ -27,7 +27,7 @@ class insertProducts extends Seeder
             $XN = Arr::random($XN1). ' ' .Arr::random($XN2); //Random tên Xiaomi
             $ON = Arr::random($ON1). ' ' .Arr::random($ON2); //Random tên Oppo
             
-            DB::table('Products')->upsert([[
+            product::upsert([[
                 'name' => 'Apple'.' '.mt_rand(11, 15).' '.Arr::random($AN),
                 'image' => 'apple'.mt_rand(1, 5).'.png',
                 'priceSale' => mt_rand(20000000, 24999999),

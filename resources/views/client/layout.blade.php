@@ -52,7 +52,7 @@
       <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
       <nav id="navbar" class="navbar">
-        @include('menu')
+        @include('client.menu')
       </nav><!-- .navbar -->
 
     </div>
