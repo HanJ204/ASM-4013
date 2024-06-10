@@ -13,8 +13,10 @@ return new class extends Migration
     {
         Schema::create('properties', function (Blueprint $table) {
             $table->id();
-            $table->string('color');
-            $table->string('capacity');
+            $table->string('colors');
+            $table->string('storageOptions');
+            $table->string('screenSize');
+            $table->string('battery');
             $table->unsignedBigInteger('idProduct');
             $table->timestamps();
         });

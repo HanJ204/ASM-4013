@@ -1,157 +1,394 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html class="no-js" lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>@yield('title')</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>@yield('tieudetrang')</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+    <link rel="apple-touch-icon" href="/client/images/icons/favicon.ico">
+    <!-- Place favicon.ico in the root directory -->
 
-  <!-- Favicons -->
-  <!-- <link href="assets/img/favicon.png" rel="icon"> -->
-  <!-- <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
+    <!-- All css files are included here. -->
+    <!-- Bootstrap fremwork main css -->
+    <link rel="stylesheet" href="/client/css/bootstrap.min.css">
+    <!-- This core.css file contents all plugings css file. -->
+    <link rel="stylesheet" href="/client/css/core.css">
+    <!-- Theme shortcodes/elements style -->
+    <link rel="stylesheet" href="/client/css/shortcode/shortcodes.css">
+    <!-- Theme main style -->
+    <link rel="stylesheet" href="/client/css/style.css">
+    <!-- Responsive css -->
+    <link rel="stylesheet" href="/client/css/responsive.css">
+    <!-- User style -->
+    <link rel="stylesheet" href="/client/css/custom.css">  <link rel="stylesheet" href="/client/css/color/skin-default.css">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="/assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-  <!-- Template Main CSS File -->
-  <!-- <link href="/assets/css/slick.css" rel="stylesheet"> -->
-  <link href="/assets/css/style.css" rel="stylesheet">
-  <!-- <link href="/assets/css/themes.css" rel="stylesheet"> -->
-  <!-- <link href="/assets/css/home-11.css" rel="stylesheet"> -->
-
-  <!-- =======================================================
-  * Template Name: Arsha
-  * Updated: Mar 13 2024 with Bootstrap v5.3.3
-  * Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+    
+    <!-- Modernizr JS -->
+    <script src="/client/js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->  
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top ">
-    <div class="container d-flex align-items-center">
-
-      <h1 class="logo me-auto"><a href="{{ url('/') }}">J Mobile</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
-      <nav id="navbar" class="navbar">
-        @include('client.menu')
-      </nav><!-- .navbar -->
-
-    </div>
-  </header><!-- End Header -->
-
-
-  @yield('noidung')
-
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-
-    <!-- <div class="footer-newsletter">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-6">
-            <h4>Tìm kiếm sản phẩm</h4>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Tìm kiếm">
-            </form>
-          </div>
-        </div>
-      </div>
-    </div> -->
-
-    <div class="footer-top">
-      <div class="container">
-        <div class="row">
-
-          <div class="col-lg-3 col-md-6 footer-contact">
-            <h3>J Mobile</h3>
-            <p>
-              418 Nguyễn Thái Sơn <br>
-              Phường 5, Gò Vấp<br>
-              Hồ Chí Minh <br><br>
-              <strong>Sđt:</strong> +84 367 775 413<br>
-              <strong>Email:</strong> congnghia0802@gmail.com<br>
-            </p>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Liên kết hữu ích</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/') }}">Trang chủ</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Về chúng tôi</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Dịch vụ</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Điều khoản dịch vụ</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Chính sách bảo mật</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Dịch vụ</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Tuyển dụng</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Dịch vụ bảo hành điện thoại</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Dịch vụ bảo hành mở rộng</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Liện hệ hợp tác kinh doanh</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Chính sách bảo hành</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Mạng xã hội của chúng tôi</h4>
-            <div class="social-links mt-3">
-              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-              <a href="https://www.facebook.com/hanj204" class="facebook"><i class="bx bxl-facebook"></i></a>
-              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-              <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+    <!-- Body main wrapper start -->
+    <div class="wrapper home-one">
+       
+        <!-- Start of header area -->
+        <header class="header-area header-wrapper">
+            <div class="header-top-bar black-bg clearfix">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3 col-xs-6">
+                            <div class="login-register-area">
+                                <ul>
+                                    <li><a href="#">Login</a></li>
+                                    <li><a href="#">Register</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 hidden-xs">
+                            <div class="social-search-area text-center">
+                                <div class="social-icon socile-icon-style-2">
+                                    <ul>
+                                        <li><a href="#" title="facebook"><i class="fa fa-facebook"></i></a> </li>
+                                        <li><a href="#" title="twitter"><i class="fa fa-twitter"></i></a> </li>
+                                        <li> <a href="#" title="dribble"><i class="fa fa-dribbble"></i></a></li>
+                                        <li> <a href="#" title="behance"><i class="fa fa-behance"></i></a> </li>
+                                        <li> <a href="#" title="rss"><i class="fa fa-rss"></i></a> </li>
+                                    </ul>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-6">
+                            <div class="cart-currency-area login-register-area text-right">
+                                <ul>
+                                    <li>
+                                        <div class="header-currency">
+                                            <select>
+                                                <option value="1">VNĐ</option>
+                                                <option value="2">USD</option>
+                                                <option value="3">Euro</option>
+                                                <option value="4">Dinar</option>
+                                            </select>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="header-cart">
+                                            <div class="cart-icon"> <a href="{{ route('cart') }}">Cart<i class="zmdi zmdi-shopping-cart"></i></a> <span>2</span> </div>
+                                            <div class="cart-content-wraper">
+                                                <div class="cart-single-wraper">
+                                                    <div class="cart-img">
+                                                        <a href="#"><img src="/client/images/product/01.jpg" alt=""></a>
+                                                    </div>
+                                                    <div class="cart-content">
+                                                        <div class="cart-name"> <a href="#">Aenean Eu Tristique</a> </div>
+                                                        <div class="cart-price"> $70.00 </div>
+                                                        <div class="cart-qty"> Qty: <span>1</span> </div>
+                                                    </div>
+                                                    <div class="remove"> <a href="#"><i class="zmdi zmdi-close"></i></a> </div>
+                                                </div>
+                                                <div class="cart-single-wraper">
+                                                    <div class="cart-img">
+                                                        <a href="#"><img src="/client/images/product/02.jpg" alt=""></a>
+                                                    </div>
+                                                    <div class="cart-content">
+                                                        <div class="cart-name"> <a href="#">Aenean Eu Tristique</a> </div>
+                                                        <div class="cart-price"> $70.00 </div>
+                                                        <div class="cart-qty"> Qty: <span>1</span> </div>
+                                                    </div>
+                                                    <div class="remove"> <a href="#"><i class="zmdi zmdi-close"></i></a> </div>
+                                                </div>
+                                                <div class="cart-subtotal"> Subtotal: <span>$200.00</span> </div>
+                                                <div class="cart-check-btn">
+                                                    <div class="view-cart"> <a class="btn-def" href="{{ route('cart') }}">View Cart</a> </div>
+                                                    <div class="check-btn"> <a class="btn-def" href="checkout.html">Checkout</a> </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-
+            @include('client.menu')
+        </header>
+        <!-- End of header area -->
+        
+        @yield('content')
+        
+        <!-- footer area start-->
+        <div class="footer-area ptb-50">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                        <div class="single-footer contact-us">
+                            <div class="footer-title uppercase">
+                                <h5>Liên hệ</h5> </div>
+                            <ul>
+                                <li>
+                                    <div class="contact-icon"> <i class="zmdi zmdi-pin-drop"></i> </div>
+                                    <div class="contact-text">
+                                        <p><span>418 Nguyên thái sơn, P5,</span> <span>Gò vấp, Hồ Chí Minh</span></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="contact-icon"> <i class="zmdi zmdi-email-open"></i> </div>
+                                    <div class="contact-text">
+                                        <p><span><a href="#">conghia0802@gmail.com</a></span> <span><a href="#">congnghia717@gmail.com</a></span></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="contact-icon"> <i class="zmdi zmdi-phone-paused"></i> </div>
+                                    <div class="contact-text">
+                                        <p><span>+84 367 775 413 </span><br> <span>+84 345 678 900</span></p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
+                        <div class="single-footer informaton-area">
+                            <div class="footer-title uppercase">
+                                <h5>=Thông tin</h5> </div>
+                            <div class="informatoin">
+                                <ul>
+                                    <li><a href="#">Tài khoản của tôi</a></li>
+                                    <li><a href="#">Lịch sử đơn hàng</a></li>
+                                    <li><a href="#">Danh sách yêu thích</a></li>
+                                    <li><a href="#">Chính sách riêng tư</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 hidden-sm col-xs-12">
+                        <div class="single-footer instagrm-area">
+                            <div class="footer-title uppercase">
+                                <h5>InstaGram</h5> 
+                            </div>
+                            <div class="instagrm">
+                                <ul>
+                                    <li><a href="#"><img src="/client/images/gallery/01.jpg" alt=""></a></li>
+                                    <li><a href="#"><img src="/client/images/gallery/02.jpg" alt=""></a></li>
+                                    <li><a href="#"><img src="/client/images/gallery/03.jpg" alt=""></a></li>
+                                    <li><a href="#"><img src="/client/images/gallery/04.jpg" alt=""></a></li>
+                                    <li><a href="#"><img src="/client/images/gallery/05.jpg" alt=""></a></li>
+                                    <li><a href="#"><img src="/client/images/gallery/06.jpg" alt=""></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-4 col-lg-offset-1 col-xs-12">
+                        <div class="single-footer newslatter-area">
+                            <div class="footer-title uppercase">
+                                <h5>Nhận tin tức mới</h5> 
+                            </div>
+                            <div class="newslatter">
+                                <form action="#" method="post">
+                                    <div class="input-box pos-rltv">
+                                        <input placeholder="Nhập email của bạn" type="text"> 
+                                        <a href="#">
+                                            <i class="zmdi zmdi-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </form>
+                                <div class="social-icon socile-icon-style-3 mt-40">
+                                    <div class="footer-title uppercase">
+                                        <h5>Mạng xã hội</h5> 
+                                    </div>
+                                    <ul>
+                                        <li><a href="#"><i class="zmdi zmdi-facebook"></i></a></li>
+                                        <li><a href="#"><i class="zmdi zmdi-linkedin"></i></a></li>
+                                        <li><a href="#"><i class="zmdi zmdi-pinterest"></i></a></li>
+                                        <li><a href="#"><i class="zmdi zmdi-google"></i></a></li>
+                                        <li><a href="#"><i class="zmdi zmdi-twitter"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
+        <!--footer area start-->
+        
+        <!--footer bottom area start-->
+        <div class="footer-bottom global-table">
+            <div class="global-row">
+                <div class="global-cell">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="copyrigth"> Copyright @ 
+									<a href="#">HanJ</a> All right reserved 
+								</div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <ul class="payment-support text-right">
+                                    <li>
+                                        <a href="#"><img src="/client/images/icons/pay1.png" alt="" /></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><img src="/client/images/icons/pay2.png" alt="" /></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><img src="/client/images/icons/pay3.png" alt="" /></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><img src="/client/images/icons/pay4.png" alt="" /></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><img src="/client/images/icons/pay5.png" alt="" /></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--footer bottom area end-->
+        
 
-    <div class="container footer-bottom clearfix">
-      <div class="copyright">
-        &copy; Copyright <strong><span>J Mobile</span></strong>. All Rights Reserved
-      </div>
-      
-    </div>
-  </footer><!-- End Footer -->
 
-  <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+        <!-- QUICKVIEW PRODUCT -->
+        <div id="quickview-wrapper">
+            <!-- Modal -->
+            <div class="modal fade" id="productModal" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="modal-product">
+                              <div class="product-images"> 
+                                   <!--modal tab start-->
+                                    <div class="portfolio-thumbnil-area-2">
+                                        <div class="tab-content active-portfolio-area-2">
+                                            <div role="tabpanel" class="tab-pane active" id="view1">
+                                                <div class="product-img">
+                                                    <a href="#"><img src="/client/images/product/01.jpg" alt="Single portfolio" /></a>
+                                                </div>
+                                            </div>
+                                            <div role="tabpanel" class="tab-pane" id="view2">
+                                                <div class="product-img">
+                                                    <a href="#"><img src="/client/images/product/02.jpg" alt="Single portfolio" /></a>
+                                                </div>
+                                            </div>
+                                            <div role="tabpanel" class="tab-pane" id="view3">
+                                                <div class="product-img">
+                                                    <a href="#"><img src="/client/images/product/03.jpg" alt="Single portfolio" /></a>
+                                                </div>
+                                            </div>
+                                            <div role="tabpanel" class="tab-pane" id="view4">
+                                                <div class="product-img">
+                                                    <a href="#"><img src="/client/images/product/04.jpg" alt="Single portfolio" /></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-more-views-2">
+                                            <div class="thumbnail-carousel-modal-2" data-tabs="tabs">
+                                                <a href="#view1" aria-controls="view1" data-toggle="tab"><img src="/client/images/product/01.jpg" alt="" /></a>
+                                                <a href="#view2" aria-controls="view2" data-toggle="tab"><img src="/client/images/product/02.jpg" alt="" /></a>
+                                                <a href="#view3" aria-controls="view3" data-toggle="tab"><img src="/client/images/product/03.jpg" alt="" /></a>
+                                                <a href="#view4" aria-controls="view4" data-toggle="tab"><img src="/client/images/product/04.jpg" alt="" /></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <!--modal tab end-->
+                                    <!-- .product-images -->
+                                    <div class="product-info">
+                                        <h1>Aenean eu tristique</h1>
+                                        <div class="price-box-3">
+                                            <div class="s-price-box"> <span class="new-price">$160.00</span> <span class="old-price">$190.00</span> </div>
+                                        </div> <a href="shop.html" class="see-all">See all features</a>
+                                        <div class="quick-add-to-cart">
+                                            <form method="post" class="cart">
+                                                <div class="numbers-row">
+                                                    <input type="number" id="french-hens" value="3" min="1"> </div>
+                                                <button class="single_add_to_cart_button" type="submit">Add to cart</button>
+                                            </form>
+                                        </div>
+                                        <div class="quick-desc"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero.Nam fringilla tristique auctor. </div>
+                                        <div class="social-sharing-modal">
+                                            <div class="widget widget_socialsharing_widget">
+                                                <h3 class="widget-title-modal">Share this product</h3>
+                                                <ul class="social-icons-modal">
+                                                    <li><a target="_blank" title="Facebook" href="#" class="facebook m-single-icon"><i class="fa fa-facebook"></i></a></li>
+                                                    <li><a target="_blank" title="Twitter" href="#" class="twitter m-single-icon"><i class="fa fa-twitter"></i></a></li>
+                                                    <li><a target="_blank" title="Pinterest" href="#" class="pinterest m-single-icon"><i class="fa fa-pinterest"></i></a></li>
+                                                    <li><a target="_blank" title="Google +" href="#" class="gplus m-single-icon"><i class="fa fa-google-plus"></i></a></li>
+                                                    <li><a target="_blank" title="LinkedIn" href="#" class="linkedin m-single-icon"><i class="fa fa-linkedin"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- .product-info -->
+                                </div>
+                                <!-- .modal-product -->
+                            </div>
+                            <!-- .modal-body -->
+                        </div>
+                        <!-- .modal-content -->
+                    </div>
+                    <!-- .modal-dialog -->
+                </div>
+                <!-- END Modal -->
+            </div>
+        <!-- END QUICKVIEW PRODUCT -->
+    </div> 
+    <!-- Body main wrapper end -->
 
-  <!-- Vendor JS Files -->
-  <script src="/assets/vendor/aos/aos.js"></script>
-  <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="/assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="/assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="/assets/vendor/php-email-form/validate.js"></script>
+    <!-- Placed js at the end of the document so the pages load faster -->
 
-  <!-- Template Main JS File -->
-  <script src="/assets/js/main.js"></script>
+    <!-- jquery latest version -->
+    <script src="/client/js/vendor/jquery-1.12.0.min.js"></script>
+    <!-- Bootstrap framework js -->
+    <script src="/client/js/bootstrap.min.js"></script>
+    <!-- Slider js -->
+    <script src="/client/js/slider/jquery.nivo.slider.pack.js"></script>
+    <script src="/client/js/slider/nivo-active.js"></script>
+    <!-- counterUp-->
+    <script src="/client/js/jquery.countdown.min.js"></script>
+    <!-- All js plugins included in this file. -->
+    <script src="/client/js/plugins.js"></script>
+    <!-- Main js file that contents all jQuery plugins activation. -->
+    <script src="/client/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('.add-to-cart').click(function(e) {
+                e.preventDefault();
+                let idProduct = $(this).data('id');
+                let quantity = $(this).data('quantity');
+
+                $.ajax({
+                    url: `/addcart/${idProduct}/${quantity}`,
+                    type: 'GET',
+                    success: function(response) {
+                        if(response.success) {
+                            alert('Đã thêm vào giỏ hàng');
+                            // Cập nhật giỏ hàng trên giao diện nếu cần
+                        } else {
+                            alert('Có lỗi xảy ra');
+                        }
+                    },
+                    error: function() {
+                        alert('Có lỗi xảy ra khi thêm vào giỏ hàng');
+                    }
+                });
+            });
+        });
+    </script>
 
 </body>
 

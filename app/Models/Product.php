@@ -9,7 +9,8 @@ class Product extends Model
 {
     use HasFactory;
     protected $table = 'products';
-    protected $primarykey = 'id';
+    public $primarykey = 'id';
+    protected $attributes = ['anHien'=>1,'hot'=>0,'view'=>0];
     protected $dates = ['dateSubmitted'];
     protected $fillable = [
         'name',
@@ -18,10 +19,13 @@ class Product extends Model
         'price',
         'priceSale',
         'quantity',
+        'sold',
         'hot',
         'view',
+        'label',
         'anHien',
         'dateSubmitted',
+        'slug',
         'idCategory',
     ];
 }
