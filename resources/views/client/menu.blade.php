@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-md-2 col-sm-2">
           <div class="logo ptb-20"><a href="{{ url('/') }}">
-              <img src="/client/images/logo/logo.png" alt="main logo"></a>
+              <img src="/client/images/logo/logo-hanj-nbg.png" height="50px" alt="main logo"></a>
           </div>
         </div>
         <div class="col-md-7 col-sm-10 hidden-xs">
