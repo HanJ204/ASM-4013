@@ -12,7 +12,7 @@ Version: 1.0
 /*menu style */
 .header-area {
   position: relative;
-  z-index: 99999999;
+  z-index: 999;
 }
 .main-menu {
   font-family: Montserrat;

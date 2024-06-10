@@ -84,13 +84,13 @@
                 <ul class="list-unstyled topbar-right-menu float-right mb-0">
                     <li class="dropdown notification-list hide-phone">
                         <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                            <i class="mdi mdi-earth"></i> English <i class="mdi mdi-chevron-down"></i>
+                            <i class="mdi mdi-earth"></i> Việt Nam <i class="mdi mdi-chevron-down"></i>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
 
                             <!-- item-->
                             <a href="javascript:void(0);" class="dropdown-item">
-                                Spanish
+                                English
                             </a>
 
                             <!-- item-->
@@ -226,9 +226,10 @@
                         </div>
                     </li>
 
+                    @if( Auth::guard('admin')->check()) 
                     <li class="dropdown notification-list">
                         <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                            <img src="/admin/images/users/avatar-1.jpg" alt="user" class="rounded-circle"> <span class="ml-1">Samuel <i class="mdi mdi-chevron-down"></i> </span>
+                            <img src="/admin/images/users/avatar-1.jpg" alt="user" class="rounded-circle"> <span class="ml-1">{{Auth::guard('admin')->user()->name}} <i class="mdi mdi-chevron-down"></i> </span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                             <!-- item-->
@@ -238,31 +239,27 @@
 
                             <!-- item-->
                             <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <i class="fi-head"></i> <span>My Account</span>
+                                <i class="fi-head"></i> <span>Tài khoản của tôi</span>
                             </a>
 
                             <!-- item-->
                             <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <i class="fi-cog"></i> <span>Settings</span>
+                                <i class="fi-cog"></i> <span>Cài đặt</span>
                             </a>
 
                             <!-- item-->
                             <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <i class="fi-help"></i> <span>Support</span>
+                                <i class="fi-help"></i> <span>Hỗ trợ</span>
                             </a>
 
                             <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <i class="fi-lock"></i> <span>Lock Screen</span>
-                            </a>
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <i class="fi-power"></i> <span>Logout</span>
+                            <a href="{{url('admin/exit')}}" class="dropdown-item notify-item">
+                                <i class="fi-power"></i> <span>Đăng xuất</span>
                             </a>
 
                         </div>
                     </li>
+                    @endif
 
                 </ul>
 
@@ -274,7 +271,7 @@
                     </li>
                     <li class="hide-phone app-search">
                         <form role="search" class="">
-                            <input type="text" placeholder="Search..." class="form-control">
+                            <input type="text" placeholder="Tìm kiếm..." class="form-control">
                             <a href=""><i class="fa fa-search"></i></a>
                         </form>
                     </li>
