@@ -63,7 +63,27 @@ class AdminCateController extends Controller
         }
         $category = category::find($id);
         $category->delete();
-        return redirect(route('cate.index'))->with('success', 'Xóa thành công');
+        return redirect(route('cate.index'))->with('success', 'Xóa thành công! Bạn có thể khôi phục nó trong thùng rác');
     
+    }
+
+    public function catetrash(Request $request)
+    {
+        $catetrash_arr = category::onlyTrashed()->orderBy('thuTu', 'asc')->get();
+        return view('admin.catetrash', compact('catetrash_arr'));
+    }
+
+    function catetrash_restore($id) {
+        $category = category::withTrashed()->find($id);
+        if ($category == null) return redirect('/admin/protrash')->with('warning', 'Không tìm thấy danh mục cần khôi phục');
+        $category->restore();
+        return redirect('/admin/catetrash')->with('success', 'Khôi phục thành công');
+    }
+
+    function catetrash_delete($id) {
+        $category = category::withTrashed()->find($id);
+        if ($category == null) return redirect('/admin/protrash')->with('warning', 'Không tìm thấy danh mục cần xóa');
+        $category->forceDelete();
+        return redirect('/admin/catetrash')->with('success', 'Xóa vĩnh viễn danh mục thành công');
     }
 }

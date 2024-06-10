@@ -18,6 +18,7 @@ return new class extends Migration
             $table->boolean('status')->default(1);
             $table->unsignedBigInteger('idUser');
             $table->unsignedBigInteger('idProduct');
+            $table->timestamp('deleted_at')->nullable();
             $table->timestamps();
         });
     }

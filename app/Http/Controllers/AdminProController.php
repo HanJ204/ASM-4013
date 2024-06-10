@@ -15,12 +15,21 @@ class AdminProController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+        $idCategory = -1;
+        if ($request->has('idCategory')) $idCategory = (int) $request['idCategory'];
+
         $perpage = env('PER_PAGE');
-        $product_arr = product::orderBy('id','desc')
-        ->paginate($perpage)->withQueryString();
-        return view('admin.product',compact('product_arr'));
+        if ($idCategory>0) {
+            $product_arr = product::orderBy('id','desc')->where('idCategory', $idCategory)
+            ->paginate($perpage)->withQueryString();
+        }else {
+            $product_arr = product::orderBy('id','desc')
+            ->paginate($perpage)->withQueryString();
+        }
+        $cate_arr = category::all();
+        return view('admin.product',compact(['idCategory', 'product_arr', 'cate_arr']));
     }
 
     /**
@@ -98,8 +107,40 @@ class AdminProController extends Controller
             return redirect('/admin/product');
         }
         product::where('id', $id)->delete();
-        $request->session()->flash('alert', 'Đã xóa sản phẩm');
+        $request->session()->flash('alert', 'Xóa thành công! Bạn có thể khôi phục nó trong thùng rác');
         return redirect('/admin/product');
 
     }
+
+    public function protrash(Request $request)
+    {
+        $idCategory = -1;
+        if ($request->has('idCategory')) $idCategory = (int) $request['idCategory'];
+
+        $perpage = env('PER_PAGE');
+        if ($idCategory>0) {
+            $protrash_arr = product::onlyTrashed()->orderBy('id','desc')->where('idCategory', $idCategory)
+            ->paginate($perpage)->withQueryString();
+        }else {
+            $protrash_arr = product::onlyTrashed()->orderBy('id','desc')
+            ->paginate($perpage)->withQueryString();
+        }
+        $cate_arr = category::all();
+        return view('admin.protrash',compact(['idCategory', 'protrash_arr', 'cate_arr']));
+    }
+
+    function protrash_restore($id) {
+        $product = product::withTrashed()->find($id);
+        if ($product == null) return redirect('/admin/protrash')->with('warning', 'Không tìm thấy sản phẩm cần khôi phục');
+        $product->restore();
+        return redirect('/admin/protrash');
+    }
+
+    function protrash_delete($id) {
+        $product = product::withTrashed()->find($id);
+        if ($product == null) return redirect('/admin/protrash')->with('warning', 'Không tìm thấy sản phẩm cần xóa');
+        $product->forceDelete();
+        return redirect('/admin/protrash');
+    }
+    
 }

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->integer('thuTu')->default(0);
             $table->boolean('anHien')->default(1);
+            $table->timestamp('deleted_at')->nullable();
             $table->timestamps();
         });
     }

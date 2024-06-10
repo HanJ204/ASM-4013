@@ -27,6 +27,7 @@ return new class extends Migration
             $table->dateTime('dateSubmitted');
             $table->string('slug')->nullable();
             $table->unsignedBigInteger('idCategory');
+            $table->timestamp('deleted_at')->nullable();
             $table->timestamps();
         });
     }

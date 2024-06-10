@@ -25,7 +25,7 @@
     <div class="container">
         <div class="row">
             <div style="display: flex; justify-content: center;">
-            <div class="col-sm-6 col-xs-6">
+                <div class="col-sm-6 col-xs-6">
                     <form action="{{url('/login')}}" method="post" class="login-side">@csrf
                         <div class="login-reg">
                             <h3>Đăng nhập</h3>
@@ -42,10 +42,15 @@
                             <div class="input-box tci-box">
                                 <button type="submit" class="btn btn-info">Đăng nhập</button>
                             </div>
-                            <span>
-                                <input class="remr" type="checkbox"> Ghi nhớ tôi
-                            </span>
+
                             <a href="#" class="forgotten forg">Lấy lại mật khẩu?</a>
+                        </div>
+                        <div class="frm-action">
+                            <div id="dngooggle" class="text-center">
+                                <a href="http://localhost:8000/login/google">
+                                    <img width="150" src="https://developers.google.com/identity/images/btn_google_signin_dark_normal_web.png">
+                                </a>
+                            </div>
                         </div>
                     </form>
                 </div>

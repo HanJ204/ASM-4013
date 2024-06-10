@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Auth\Events\Registered;
 
 class UsersController extends Controller
 {
@@ -40,6 +41,9 @@ class UsersController extends Controller
         $id_user  = $u->id;
         if(auth()->guard('web')->attempt(['email'=>$request['email'],'password'=>$request['password']])){
             // gửi mail
+            $user = auth()->guard('web')->user();
+            event(new Registered($user));
+
             return redirect('/')->with('success',"Đăng ký hoàn tất!");
         }
         else return back()->with('warning','Đăng ký không thành công');

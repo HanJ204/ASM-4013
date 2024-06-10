@@ -40,7 +40,7 @@ Quản trị sản phẩm
                             </select>
                             <script>
                                 function locsp(idCategory) {
-                                    document.location = `/admin/product?idCategory=${idCategory}`;
+                                    document.location = `/admin/protrash?idCategory=${idCategory}`;
                                 }
                             </script>
                         </div>
@@ -58,28 +58,28 @@ Quản trị sản phẩm
                             </tr>
                         </thead>
                         <tbody class="table-border-bottom-0">
-                            @foreach ($product_arr as $product)
+                            @foreach ($protrash_arr as $protrash)
                             <tr>
-                                <td class="text-center"><img src="/client/images/product/{{$product->image}}" height="80"></td>
-                                <td><strong>{{$product->name}}</strong></td>
-                                <td class="text-center">Giá:{{ number_format($product->price,0,',', '.') }} <br>
-                                    KM : {{ number_format($product->priceSale,0,',', '.') }}</td>
-                                <td class="text-center">{{date('d/m/ Y',strtotime($product->dateSubmitted))}}</td>
-                                <td class="text-center">Ẩn hiện: {{($product->anHien==0)? "Đang ẩn":"Đang hiện"}} <br>
-                                    Nổi bật: {{($product->hot==0)? "Bình thường":"Nổi bật"}} </td>
+                                <td class="text-center"><img src="/client/images/product/{{$protrash->image}}" height="80"></td>
+                                <td><strong>{{$protrash->name}}</strong></td>
+                                <td class="text-center">Giá:{{ number_format($protrash->price,0,',', '.') }} <br>
+                                    KM : {{ number_format($protrash->priceSale,0,',', '.') }}</td>
+                                <td class="text-center">{{date('d/m/ Y',strtotime($protrash->dateSubmitted))}}</td>
+                                <td class="text-center">Ẩn hiện: {{($protrash->anHien==0)? "Đang ẩn":"Đang hiện"}} <br>
+                                    Nổi bật: {{($protrash->hot==0)? "Bình thường":"Nổi bật"}} </td>
                                 <td class="text-center">
-                                    <a class="btn btn-outline-info btn-sm" href="{{url('admin/product/'.$product->id.'/edit')}}"><i class="bx bx-edit-alt me-1"></i> Edit</a>
-                                    <!-- <a class="btn btn-danger btn-sm" href="" onclick="return confirm('Bạn có muốm xóa không')"><i class="bx bx-trash me-1"></i> Delete</a> -->
-                                    <form class="d-inline" action="{{route('product.destroy', $product->id)}}" method="POST">
+                                    <a class="btn btn-outline-info btn-sm" href="protrash/restore/{{ $protrash->id }}"><i class="bx bx-edit-alt me-1"></i> Khôi phục</a>
+                                    <a class="btn btn-danger btn-sm" href="protrash/delete/{{$protrash->id}}" onclick="return confirm('Bạn có muốm xóa vĩnh viễn không')"><i class="bx bx-trash me-1"></i> Xóa vĩnh viễn</a>
+                                    <!-- <form class="d-inline" action="{{route('product.destroy', $protrash->id)}}" method="POST">
                                         @csrf @method('DELETE')
                                         <button type='submit' onclick="return confirm('Bạn muốn xóa à')" class="btn btn-danger btn-sm ms-1"><i class="bx bx-trash me-1"></i> Xóa</button>
-                                    </form>
+                                    </form> -->
                                 </td>
                             </tr>
                             @endforeach
                         </tbody>
                     </table>
-                    <div class="d-flex justify-content-center m-5">{{ $product_arr->links() }} </div>
+                    <div class="d-flex justify-content-center m-5">{{ $protrash_arr->links() }} </div>
                 </div>
             </div>
         </div> <!-- end row -->
